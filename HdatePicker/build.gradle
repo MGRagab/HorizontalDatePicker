@@ -42,13 +42,9 @@ def getVersionName = { ->
 }
 
 def getArtifactId = { ->
-    return "HdatePicker"
+    return "hdatepicker"
 }
 
-// Add the group ID of your library here
-def getGroupId = { ->
-    return "com.mgragab.hdatepicker"
-}
 afterEvaluate {
 
     publishing {
