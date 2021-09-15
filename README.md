@@ -3,9 +3,9 @@ Horizontal Picker
 
 What is this?
 -------------
-HorizontalPicker is a custom-build Android View used for choosing dates (similar to the native date picker) but draws horizontally into a vertically narrow container. It allows easy day picking using the horizontal pan gesture.
+HorizontalPicker is a custom-build Android View used for choosing dates 
 
-Too see it in action, [download the demo app](https://github.com/jhonnyx2012/HorizontalPicker/blob/master/appDemoDebug.apk?raw=true) to try it out.
+Newer Version For [https://github.com/jhonnyx2012/HorizontalPicker](https://github.com/jhonnyx2012/HorizontalPicker)
 
 This is what it looks like.
 
@@ -26,12 +26,6 @@ Features
 * Customizable set of colors, or themed through the app theming engine
 
 **Note**: This library uses the [JodaTime](https://github.com/JodaOrg/joda-time) library to work with days.
-
-Requirements
-------------
-- Android 4.1 or later (Minimum SDK level 16)
-- Android Studio (to compile and use)
-- **Eclipse is not supported**
 
 Getting Started
 ---------------
