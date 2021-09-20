@@ -4,6 +4,28 @@ plugins {
     id 'maven-publish'
 }
 
+ext {
+    PUBLISH_GROUP_ID = 'io.github.MGRagab'
+    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_ARTIFACT_ID = 'hdatepicker'
+    PUBLISH_DESCRIPTION = 'Horizontal Date Picker Library '
+    PUBLISH_URL = 'https://github.com/MGRagab/HorizontalDatePicker'
+    PUBLISH_LICENSE_NAME = 'Apache License'
+    PUBLISH_LICENSE_URL =
+            'https://github.com/MGRagab/HorizontalDatePicker/blob/master/LICENSE'
+    PUBLISH_DEVELOPER_ID = 'MGRagab'
+    PUBLISH_DEVELOPER_NAME = 'Mohammed Gamal'
+    PUBLISH_DEVELOPER_EMAIL = 'mohamed.gamal091@gmail.com'
+    PUBLISH_SCM_CONNECTION =
+            'scm:git:github.com/MGRagab/HorizontalDatePicker.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION =
+            'scm:git:ssh://github.com/MGRagab/HorizontalDatePicker.git'
+    PUBLISH_SCM_URL =
+            'https://github.com/MGRagab/HorizontalDatePicker/tree/master'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
 
 android {
     compileSdk 30
@@ -36,40 +58,6 @@ android {
 Properties githubProperties = new Properties()
 githubProperties.load(project.rootProject.file('github.properties').newDataInputStream())
 
-
-def getVersionName = { ->
-    return "1.0.0"
-}
-
-def getArtifactId = { ->
-    return "hdatepicker"
-}
-
-afterEvaluate {
-
-    publishing {
-        publications {
-            bar(MavenPublication) {
-                groupId 'com.mgragab.hdatepicker'
-                artifactId getArtifactId()
-                version getVersionName()
-                artifact("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
-            }
-        }
-
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/MGRagab/HorizontalDatePicker")
-                credentials {
-                    username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-                    password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
-                }
-            }
-        }
-    }
-
-}
 
 dependencies {
 
